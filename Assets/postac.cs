@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class postac : MonoBehaviour
 {
-
+    [SerializeField] private FieldOfView fieldOfView;
     public float movementspeed;
     public bool flip = true;
     private Rigidbody2D rbBody;
@@ -53,6 +53,10 @@ public class postac : MonoBehaviour
 
     void Update()
     {
+       // FieldOfView.SetAimDirection(aimDir);
+        //FieldOfView.SetOrigin(transform.position);
+
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -62,11 +66,11 @@ public class postac : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
 
-            anim.SetBool("run", true);
+           // anim.SetBool("run", true);
         }
         else
         {
-            anim.SetBool("run", false);
+           // anim.SetBool("run", false);
         };
     }
     void FixedUpdate()
